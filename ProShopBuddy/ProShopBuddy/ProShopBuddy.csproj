@@ -12,5 +12,26 @@
   <ItemGroup>
     <PackageReference Include="Xamarin.Forms" Version="4.1.0.555618" />  
     <PackageReference Include="Xamarin.Essentials" Version="1.1.0" />
+    <PackageReference Include="MvvmCross" Version="5.0.6" />
+    <PackageReference Include="sqlite-net-pcl" Version="1.6.292" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="Resources\Drill_Sheet.png" />
+    <None Remove="Resources\Drill_Sheet2.png" />
+    <None Remove="Resources\Ovalthumbdrillingguide.png" />
+    <None Remove="Resources\pitchGuide.png" />
+    <None Remove="Resources\PS_Logo.png" />
+    <None Remove="Resources\WeightRemovalChart.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Drill_Sheet.png" />
+    <EmbeddedResource Include="Resources\Drill_Sheet2.png" />
+    <EmbeddedResource Include="Resources\Ovalthumbdrillingguide.png" />
+    <EmbeddedResource Include="Resources\pitchGuide.png" />
+    <EmbeddedResource Include="Resources\PS_Logo.png" />
+    <EmbeddedResource Include="Resources\WeightRemovalChart.png" />
   </ItemGroup>
 </Project>

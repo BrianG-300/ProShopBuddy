@@ -1,0 +1,23 @@
+c:/users/briang/documents/visual studio 2010/Projects/ProShopApp2/ProShopApp2/obj/x86/Debug/ProShopApp2.FrmAddSpecs.resources
+c:/users/briang/documents/visual studio 2010/Projects/ProShopApp2/ProShopApp2/obj/x86/Debug/ProShopApp2.FrmLoadSpecs.resources
+c:/users/briang/documents/visual studio 2010/Projects/ProShopApp2/ProShopApp2/obj/x86/Debug/ProShopApp2.FrmMain.resources
+c:/users/briang/documents/visual studio 2010/Projects/ProShopApp2/ProShopApp2/obj/x86/Debug/ProShopApp2.Properties.Resources.resources
+c:/users/briang/documents/visual studio 2010/Projects/ProShopApp2/ProShopApp2/obj/x86/Debug/ProShopApp2.csproj.GenerateResource.Cache
+c:/users/briang/documents/visual studio 2010/Projects/ProShopApp2/ProShopApp2/bin/Debug/ProShopApp2.exe
+c:/users/briang/documents/visual studio 2010/Projects/ProShopApp2/ProShopApp2/bin/Debug/ProShopApp2.pdb
+c:/users/briang/documents/visual studio 2010/Projects/ProShopApp2/ProShopApp2/obj/x86/Debug/ProShopApp2.exe
+c:/users/briang/documents/visual studio 2010/Projects/ProShopApp2/ProShopApp2/obj/x86/Debug/ProShopApp2.pdb
+C:/Users/BrianG/Documents/Visual Studio 2010/Projects/ProShopApp2/ProShopApp2/obj/x86/Debug/ProShopApp2.csprojResolveAssemblyReference.cache
+C:/Users/BrianG/Dropbox/Brian Videos/ProShopApp2/ProShopApp2/obj/x86/Debug/ProShopApp2.exe
+C:/Users/BrianG/Dropbox/Brian Videos/ProShopApp2/ProShopApp2/obj/x86/Debug/ProShopApp2.pdb
+/Users/novarumdx/Desktop/ProShopApp2/ProShopApp2/bin/Debug/ProShopApp2.exe
+/Users/novarumdx/Desktop/ProShopApp2/ProShopApp2/bin/Debug/ProShopApp2.pdb
+/Users/novarumdx/Desktop/ProShopApp2/ProShopApp2/obj/x86/Debug/ProShopApp2.csprojAssemblyReference.cache
+/Users/novarumdx/Desktop/ProShopApp2/ProShopApp2/obj/x86/Debug/ProShopApp2.FrmAddSpecs.resources
+/Users/novarumdx/Desktop/ProShopApp2/ProShopApp2/obj/x86/Debug/ProShopApp2.FrmLoadSpecs.resources
+/Users/novarumdx/Desktop/ProShopApp2/ProShopApp2/obj/x86/Debug/ProShopApp2.FrmMain.resources
+/Users/novarumdx/Desktop/ProShopApp2/ProShopApp2/obj/x86/Debug/ProShopApp2.Properties.Resources.resources
+/Users/novarumdx/Desktop/ProShopApp2/ProShopApp2/obj/x86/Debug/ProShopApp2.csproj.GenerateResource.cache
+/Users/novarumdx/Desktop/ProShopApp2/ProShopApp2/obj/x86/Debug/ProShopApp2.csproj.CoreCompileInputs.cache
+/Users/novarumdx/Desktop/ProShopApp2/ProShopApp2/obj/x86/Debug/ProShopApp2.exe
+/Users/novarumdx/Desktop/ProShopApp2/ProShopApp2/obj/x86/Debug/ProShopApp2.pdb

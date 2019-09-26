@@ -7,11 +7,19 @@ using Xamarin.Forms;
 
 using ProShopBuddy.Models;
 using ProShopBuddy.Services;
+using MvvmCross.Navigation;
 
 namespace ProShopBuddy.ViewModels
 {
     public class BaseViewModel : INotifyPropertyChanged
     {
+        //private readonly IMvxNavigationService _navigationService;
+
+        //public BaseViewModel(IMvxNavigationService navigationService)
+        //{
+        //    _navigationService = navigationService;
+        //}
+
         public IDataStore<Item> DataStore => DependencyService.Get<IDataStore<Item>>() ?? new MockDataStore();
 
         bool isBusy = false;

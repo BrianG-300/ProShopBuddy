@@ -20,7 +20,8 @@ namespace ProShopBuddy.Views
 
             menuItems = new List<HomeMenuItem>
             {
-                new HomeMenuItem {Id = MenuItemType.Browse, Title="Browse" },
+                new HomeMenuItem {Id = MenuItemType.Players, Title="Players List" },
+                new HomeMenuItem {Id = MenuItemType.References, Title="References" },
                 new HomeMenuItem {Id = MenuItemType.About, Title="About" }
             };
 

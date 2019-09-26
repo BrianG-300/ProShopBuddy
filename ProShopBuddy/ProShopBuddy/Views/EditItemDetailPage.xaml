@@ -1,0 +1,363 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="clr-namespace:ProShopBuddy.ViewModels"
+             mc:Ignorable="d"
+             x:Class="ProShopBuddy.Views.EditItemDetailPage"
+             Title="{Binding Title}">
+
+    <ContentPage.BindingContext>
+        <vm:EditItemDetailViewModel />
+    </ContentPage.BindingContext>
+
+    <ContentPage.Content>
+        <ScrollView Orientation="Vertical">
+            <StackLayout Orientation="Vertical">
+                <Grid Padding="5,5"
+                      RowSpacing="2"
+                      ColumnSpacing="2"
+                      BackgroundColor="White"
+                      HorizontalOptions="FillAndExpand"
+                      VerticalOptions="FillAndExpand">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                        <!--Name Row-->
+                        <RowDefinition Height="*" />
+                        <!--Start of specs space-->
+                        <RowDefinition Height="2*" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="2*" />
+                        <RowDefinition Height="*" />
+                        <!--End of specs space-->
+                        <RowDefinition Height="*" />
+                        <!--Inserts Row Row-->
+                        <RowDefinition Height="*" />
+                        <!--Ball Speed/Rev Rate Row-->
+                        <RowDefinition Height="*" />
+                        <!--Axis Tilt/Rotation Row-->
+                        <RowDefinition Height="*" />
+                        <!--PAP Row-->
+                        <RowDefinition Height="*" />
+                        <!--Email Row-->
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+
+                    <Image x:Name="DrillImage"
+                           IsVisible="true"
+                           HorizontalOptions="FillAndExpand"
+                           VerticalOptions="FillAndExpand"
+                           Grid.Row="1"
+                           Grid.ColumnSpan="5"
+                           Grid.RowSpan="6" />
+
+                    <Label x:Name="lblName"
+                           Text="Name: "
+                           FontSize="20"
+                           VerticalTextAlignment="Center"
+                           Grid.Row="0"
+                           Grid.Column="0" />
+                    <Entry x:Name="txtName"
+                           Text="{Binding SelectedPlayer.TEXTNAME}"
+                           BackgroundColor="Red"
+                           IsEnabled="{Binding EntryEnabled}"
+                           FontSize="14"
+                           Grid.Column="1"
+                           Grid.Row="0"
+                           Grid.ColumnSpan="4" />
+
+                    <Entry x:Name="txtLFinRev"
+                           Text="{Binding SelectedPlayer.LFINREV}"
+                           HorizontalTextAlignment="Center"
+                           IsEnabled="{Binding EntryEnabled}"
+                           BackgroundColor="Gray"
+                           FontSize="14"
+                           Grid.Row="1"
+                           VerticalOptions="Center" />
+                    <Entry x:Name="txtLFinLat"
+                           Text="{Binding SelectedPlayer.LFINLAT}"
+                           HorizontalTextAlignment="Center"
+                           IsEnabled="{Binding EntryEnabled}"
+                           BackgroundColor="Gray"
+                           FontSize="14"
+                           Grid.Row="2"
+                           VerticalOptions="Center" />
+                    <Entry x:Name="txtLFinFor"
+                           Text="{Binding SelectedPlayer.LFINFOR}"
+                           HorizontalTextAlignment="Center"
+                           IsEnabled="{Binding EntryEnabled}"
+                           BackgroundColor="Gray"
+                           FontSize="14"
+                           Grid.Row="3"
+                           VerticalOptions="Center" />
+
+                    <Entry x:Name="txtRFinRev"
+                           Text="{Binding SelectedPlayer.RFINREV}"
+                           HorizontalTextAlignment="Center"
+                           IsEnabled="{Binding EntryEnabled}"
+                           BackgroundColor="Gray"
+                           FontSize="14"
+                           Grid.Column="4"
+                           Grid.Row="1"
+                           VerticalOptions="Center" />
+                    <Entry x:Name="txtRFinLat"
+                           Text="{Binding SelectedPlayer.RFINLAT}"
+                           HorizontalTextAlignment="Center"
+                           IsEnabled="{Binding EntryEnabled}"
+                           BackgroundColor="Gray"
+                           FontSize="14"
+                           Grid.Column="4"
+                           Grid.Row="2"
+                           VerticalOptions="Center" />
+                    <Entry x:Name="txtRFinFor"
+                           Text="{Binding SelectedPlayer.RFINFOR}"
+                           HorizontalTextAlignment="Center"
+                           IsEnabled="{Binding EntryEnabled}"
+                           BackgroundColor="Gray"
+                           FontSize="14"
+                           Grid.Column="4"
+                           Grid.Row="3"
+                           VerticalOptions="Center" />
+
+                    <Entry x:Name="txtLFinDrill"
+                           Text="{Binding SelectedPlayer.LDRILL}"
+                           HorizontalTextAlignment="Center"
+                           IsEnabled="{Binding EntryEnabled}"
+                           BackgroundColor="Transparent"
+                           FontSize="14"
+                           Grid.Column="1"
+                           Grid.Row="2"
+                           VerticalOptions="Center" />
+                    <Entry x:Name="txtBridgeWidth"
+                           Text="{Binding SelectedPlayer.BRIDGE}"
+                           HorizontalTextAlignment="Center"
+                           IsEnabled="{Binding EntryEnabled}"
+                           BackgroundColor="Gray"
+                           FontSize="14"
+                           Grid.Column="2"
+                           Grid.Row="2"
+                           VerticalOptions="Center" />
+                    <Entry x:Name="txtRFinDrill"
+                           Text="{Binding SelectedPlayer.RDRILL}"
+                           HorizontalTextAlignment="Center"
+                           IsEnabled="{Binding EntryEnabled}"
+                           BackgroundColor="Transparent"
+                           FontSize="14"
+                           Grid.Column="3"
+                           Grid.Row="2"
+                           VerticalOptions="Center" />
+
+                    <Entry x:Name="txtLSpan"
+                           Text="{Binding SelectedPlayer.LSPAN}"
+                           HorizontalTextAlignment="Center"
+                           IsEnabled="{Binding EntryEnabled}"
+                           BackgroundColor="Gray"
+                           FontSize="14"
+                           Grid.Column="1"
+                           Grid.Row="4"
+                           VerticalOptions="Center" />
+                    <Entry x:Name="txtRSpan"
+                           Text="{Binding SelectedPlayer.RSPAN}"
+                           HorizontalTextAlignment="Center"
+                           IsEnabled="{Binding EntryEnabled}"
+                           BackgroundColor="Gray"
+                           FontSize="14"
+                           Grid.Column="3"
+                           Grid.Row="4"
+                           VerticalOptions="Center" />
+
+                    <Entry x:Name="txtThumbFor"
+                           Text="{Binding SelectedPlayer.THUMBFOR}"
+                           HorizontalTextAlignment="Center"
+                           IsEnabled="{Binding EntryEnabled}"
+                           BackgroundColor="Gray"
+                           FontSize="14"
+                           Grid.Column="2"
+                           Grid.Row="5"
+                           VerticalOptions="Center" />
+                    <Entry x:Name="txtThumbLLat"
+                           Text="{Binding SelectedPlayer.THUMBLLAT}"
+                           HorizontalTextAlignment="Center"
+                           IsEnabled="{Binding EntryEnabled}"
+                           BackgroundColor="Gray"
+                           FontSize="14"
+                           Grid.Column="1"
+                           Grid.Row="6"
+                           VerticalOptions="Center" />
+                    <Entry x:Name="txtThumbRLat"
+                           Text="{Binding SelectedPlayer.THUMBRLAT}"
+                           HorizontalTextAlignment="Center"
+                           IsEnabled="{Binding EntryEnabled}"
+                           BackgroundColor="Gray"
+                           FontSize="14"
+                           Grid.Column="3"
+                           Grid.Row="6"
+                           VerticalOptions="Center" />
+                    <Entry x:Name="txtThumbDrill"
+                           Text="{Binding SelectedPlayer.THUMBDRILL}"
+                           HorizontalTextAlignment="Center"
+                           IsEnabled="{Binding EntryEnabled}"
+                           BackgroundColor="Transparent"
+                           FontSize="14"
+                           Grid.Column="2"
+                           Grid.Row="6"
+                           VerticalOptions="Center" />
+                    <Entry x:Name="txtThumbRev"
+                           Text="{Binding SelectedPlayer.THUMBREV}"
+                           HorizontalTextAlignment="Center"
+                           IsEnabled="{Binding EntryEnabled}"
+                           BackgroundColor="Gray"
+                           FontSize="14"
+                           Grid.Column="2"
+                           Grid.Row="7"
+                           VerticalOptions="Center" />
+
+                    <Label x:Name="lblMidInsert"
+                           Text="Middle Finger Insert: "
+                           FontSize="14"
+                           Grid.Row="8"
+                           Grid.Column="0" />
+                    <Entry x:Name="txtMiddleInsert"
+                           BackgroundColor="Red"
+                           HorizontalTextAlignment="Center"
+                           Text="{Binding SelectedPlayer.MIDINSERT}"
+                           IsEnabled="{Binding EntryEnabled}"
+                           FontSize="16"
+                           Grid.Row="8"
+                           Grid.Column="1"
+                           Grid.ColumnSpan="1" />
+                    <Label x:Name="lblRingInsert"
+                           Text="Ring Finger Insert: "
+                           HorizontalTextAlignment="Center"
+                           FontSize="14"
+                           Grid.Row="8"
+                           Grid.Column="3" />
+                    <Entry x:Name="txtRingInsert"
+                           BackgroundColor="Red"
+                           Text="{Binding SelectedPlayer.RINGINSERT}"
+                           IsEnabled="{Binding EntryEnabled}"
+                           HorizontalTextAlignment="Center"
+                           FontSize="16"
+                           Grid.Row="8"
+                           Grid.Column="4"
+                           Grid.ColumnSpan="1" />
+
+                    <Label x:Name="lblRevRate"
+                           Text="Rev Rate: "
+                           FontSize="14"
+                           Grid.Row="9"
+                           Grid.Column="0" />
+                    <Entry x:Name="txtRevRate"
+                           BackgroundColor="Red"
+                           HorizontalTextAlignment="Center"
+                           Text="{Binding SelectedPlayer.REVRATE}"
+                           IsEnabled="{Binding EntryEnabled}"
+                           FontSize="16"
+                           Grid.Row="9"
+                           Grid.Column="1"
+                           Grid.ColumnSpan="1" />
+                    <Label x:Name="lblBallSpeed"
+                           Text="Ball Speed: "
+                           HorizontalTextAlignment="Center"
+                           FontSize="14"
+                           Grid.Row="9"
+                           Grid.Column="3" />
+                    <Entry x:Name="txtBallSpeed"
+                           BackgroundColor="Red"
+                           Text="{Binding SelectedPlayer.BALLSPEED}"
+                           IsEnabled="{Binding EntryEnabled}"
+                           HorizontalTextAlignment="Center"
+                           FontSize="16"
+                           Grid.Row="9"
+                           Grid.Column="4"
+                           Grid.ColumnSpan="1" />
+
+                    <Label x:Name="lblAxisTilt"
+                           Text="Axis Tilt: "
+                           FontSize="14"
+                           Grid.Row="10"
+                           Grid.Column="0" />
+                    <Entry x:Name="txtAxisTilt"
+                           BackgroundColor="Red"
+                           HorizontalTextAlignment="Center"
+                           Text="{Binding SelectedPlayer.AXISTILT}"
+                           IsEnabled="{Binding EntryEnabled}"
+                           FontSize="16"
+                           Grid.Row="10"
+                           Grid.Column="1"
+                           Grid.ColumnSpan="1" />
+                    <Label x:Name="lblAxisRotation"
+                           Text="Axis Rotation: "
+                           HorizontalTextAlignment="Center"
+                           FontSize="14"
+                           Grid.Row="10"
+                           Grid.Column="3" />
+                    <Entry x:Name="txtAxisRotation"
+                           BackgroundColor="Red"
+                           Text="{Binding SelectedPlayer.AXISROTATION}"
+                           IsEnabled="{Binding EntryEnabled}"
+                           HorizontalTextAlignment="Center"
+                           FontSize="16"
+                           Grid.Row="10"
+                           Grid.Column="4"
+                           Grid.ColumnSpan="1" />
+
+                    <Label x:Name="lblPAP"
+                           Text="PAP: "
+                           FontSize="16"
+                           Grid.Row="11"
+                           Grid.Column="0" />
+                    <Entry x:Name="txtPAP"
+                           Text="{Binding SelectedPlayer.PAP}"
+                           IsEnabled="{Binding EntryEnabled}"
+                           BackgroundColor="Gray"
+                           FontSize="14"
+                           Grid.Row="11"
+                           Grid.Column="1"
+                           Grid.ColumnSpan="4" />
+                    <Label x:Name="lblEmail"
+                           Text="Email: "
+                           FontSize="14"
+                           HorizontalOptions="Fill"
+                           Grid.Row="12"
+                           Grid.Column="0" />
+                    <Entry x:Name="txtEmail"
+                           Text="{Binding SelectedPlayer.EMAIL}"
+                           FontSize="14"
+                           IsEnabled="{Binding EntryEnabled}"
+                           BackgroundColor="Gray"
+                           Grid.Row="12"
+                           Grid.Column="1"
+                           Grid.ColumnSpan="4" />
+
+                </Grid>
+                <Label x:Name="lblNotes"
+                       Text="Notes: "
+                       FontSize="14" />
+                <Editor x:Name="txtNotes"
+                        HorizontalOptions="Fill"
+                        HeightRequest="500"
+                        Text="{Binding SelectedPlayer.NOTES}"
+                        IsEnabled="{Binding EntryEnabled}"
+                        BackgroundColor="Gray" />
+                <Button x:Name="References"
+                        Text="References"
+                        Clicked="OnRefClicked" />
+                <Button x:Name="btnSave"
+                        Text="Save!!"
+                        IsVisible="{Binding EntryEnabled}"
+                        Clicked="OnSaveClicked"
+                        HorizontalOptions="Fill" />
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

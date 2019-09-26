@@ -8,6 +8,7 @@ namespace ProShopBuddy
 {
     public partial class App : Application
     {
+        static PlayerDatabase database;
 
         public App()
         {
@@ -15,6 +16,17 @@ namespace ProShopBuddy
 
             DependencyService.Register<MockDataStore>();
             MainPage = new MainPage();
+        }
+        public static PlayerDatabase Database
+        {
+            get
+            {
+                if (database == null)
+                {
+                    database = new PlayerDatabase(DependencyService.Get<ILocalFileHelper>().GetLocalFilePath("Players.db3"));
+                }
+                return database;
+            }
         }
 
         protected override void OnStart()

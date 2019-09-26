@@ -6,7 +6,8 @@ namespace ProShopBuddy.Models
 {
     public enum MenuItemType
     {
-        Browse,
+        Players,
+        References,
         About
     }
     public class HomeMenuItem

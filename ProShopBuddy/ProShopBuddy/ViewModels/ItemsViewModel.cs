@@ -7,52 +7,47 @@ using Xamarin.Forms;
 
 using ProShopBuddy.Models;
 using ProShopBuddy.Views;
+using MvvmCross.Core.ViewModels;
 
 namespace ProShopBuddy.ViewModels
 {
     public class ItemsViewModel : BaseViewModel
     {
-        public ObservableCollection<Item> Items { get; set; }
-        public Command LoadItemsCommand { get; set; }
-
         public ItemsViewModel()
         {
-            Title = "Browse";
-            Items = new ObservableCollection<Item>();
-            LoadItemsCommand = new Command(async () => await ExecuteLoadItemsCommand());
-
-            MessagingCenter.Subscribe<NewItemPage, Item>(this, "AddItem", async (obj, item) =>
-            {
-                var newItem = item as Item;
-                Items.Add(newItem);
-                await DataStore.AddItemAsync(newItem);
-            });
         }
 
-        async Task ExecuteLoadItemsCommand()
+        int selectMode;
+
+        public void Init(int mode)
         {
-            if (IsBusy)
-                return;
-
-            IsBusy = true;
-
-            try
-            {
-                Items.Clear();
-                var items = await DataStore.GetItemsAsync(true);
-                foreach (var item in items)
-                {
-                    Items.Add(item);
-                }
-            }
-            catch (Exception ex)
-            {
-                Debug.WriteLine(ex);
-            }
-            finally
-            {
-                IsBusy = false;
-            }
+            selectMode = mode;
         }
+
+        public void loadPage(Players player)
+        {
+            ShowViewModel<ItemsViewModel>(new { id = player._ID, mode = selectMode });
+        }
+
+        public void GoTo_DeleteCommand(Players deletePlayer)
+        {
+            App.Database.DeletePlayerAsync(deletePlayer);
+        }
+
+        public void GoTo_AddCommand()
+        {
+            ShowViewModel<ItemsViewModel>(new { mode = 2 });
+        }
+
+        public void GoTo_LoadCommand(Players p)
+        {
+            ShowViewModel<ItemsViewModel>(new { mode = 0, id = p._ID });
+        }
+
+        public void GoTo_ECommand(Players p)
+        {
+            ShowViewModel<ItemsViewModel>(new { mode = 1, id = p._ID });
+        }
+
     }
 }

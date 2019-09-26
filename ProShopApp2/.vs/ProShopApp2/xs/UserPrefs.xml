@@ -1,0 +1,27 @@
+﻿<Properties StartupConfiguration="{6D506843-5BA5-4CD9-9033-914C3A1AB25D}|Default">
+  <MonoDevelop.Ide.ItemProperties.ProShopApp2 PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="ProShopApp2/FrmMain.cs">
+    <Files>
+      <File FileName="ProShopApp2/FrmAddSpecs.cs" Line="1" Column="1" />
+      <File FileName="ProShopApp2/FrmMain.cs" Line="1" Column="1" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="ProShopApp2" expanded="True">
+            <Node name="ProShopApp2" expanded="True">
+              <Node name="FrmAddSpecs.cs" expanded="True" />
+              <Node name="FrmMain.cs" expanded="True" selected="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>

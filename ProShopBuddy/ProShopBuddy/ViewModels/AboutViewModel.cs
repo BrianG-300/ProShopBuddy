@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Windows.Input;
-
+using MvvmCross.Navigation;
 using Xamarin.Forms;
 
 namespace ProShopBuddy.ViewModels
@@ -15,5 +15,12 @@ namespace ProShopBuddy.ViewModels
         }
 
         public ICommand OpenWebCommand { get; }
+
+        private readonly IMvxNavigationService _navigationService;
+
+        public AboutViewModel(IMvxNavigationService navigationService)
+        {
+            _navigationService = navigationService;
+        }
     }
 }

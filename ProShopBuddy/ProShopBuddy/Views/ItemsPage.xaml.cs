@@ -1,14 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
-
-using ProShopBuddy.Models;
-using ProShopBuddy.Views;
 using ProShopBuddy.ViewModels;
 
 namespace ProShopBuddy.Views
@@ -18,38 +11,80 @@ namespace ProShopBuddy.Views
     [DesignTimeVisible(false)]
     public partial class ItemsPage : ContentPage
     {
-        ItemsViewModel viewModel;
+        public ItemsViewModel viewModel;
+        Image newImage;
 
         public ItemsPage()
         {
             InitializeComponent();
+            viewModel = this.BindingContext as ItemsViewModel;
 
-            BindingContext = viewModel = new ItemsViewModel();
         }
 
-        async void OnItemSelected(object sender, SelectedItemChangedEventArgs args)
+        void AddPlayer_Clicked(object sender, System.EventArgs e)
         {
-            var item = args.SelectedItem as Item;
-            if (item == null)
-                return;
-
-            await Navigation.PushAsync(new ItemDetailPage(new ItemDetailViewModel(item)));
-
-            // Manually deselect item.
-            ItemsListView.SelectedItem = null;
+            viewModel.GoTo_AddCommand();
         }
 
-        async void AddItem_Clicked(object sender, EventArgs e)
-        {
-            await Navigation.PushModalAsync(new NavigationPage(new NewItemPage()));
-        }
-
-        protected override void OnAppearing()
+        protected override async void OnAppearing()
         {
             base.OnAppearing();
+            if (PlayerListView != null)
+            {
+                PlayerListView.ItemsSource = await App.Database.GetPlayersAsync();
+            }
+        }
 
-            if (viewModel.Items.Count == 0)
-                viewModel.LoadItemsCommand.Execute(null);
+        private void PlayerListView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+        {
+            if (e.SelectedItem != null)
+            {
+                Players p = e.SelectedItem as Players;
+                //ItemsViewModel vm = this.BindingContext as ItemsViewModel;
+            }
+        }
+
+        public async void OnDelete(object sender, EventArgs e)
+        {
+            //ItemsViewModel vm = this.BindingContext as ItemsViewModel;
+
+            var mi = ((MenuItem)sender);
+            Players p = mi.CommandParameter as Players;
+            var x = await DisplayAlert("Deleting", "Deleting " + p.TEXTNAME + "'s details", "OK", "Cancel");
+            if (x)
+            {
+                viewModel.GoTo_DeleteCommand(p);
+                await Task.Delay(60);
+                PlayerListView.ItemsSource = await App.Database.GetPlayersAsync();
+            }
+        }
+
+        public async void OnLoad(object sender, EventArgs e)
+        {
+           // ItemsViewModel vm = this.BindingContext as ItemsViewModel;
+
+            var mi = ((MenuItem)sender);
+            Players p = mi.CommandParameter as Players;
+            var x = await DisplayAlert("Loading", "Loading " + p.TEXTNAME + "'s details", "OK", "Cancel");
+            if (x)
+            {
+                viewModel.GoTo_LoadCommand(p);
+                PlayerListView.ItemsSource = await App.Database.GetPlayersAsync();
+            }
+        }
+
+        public async void OnEdit(object sender, EventArgs e)
+        {
+           // ItemsViewModel vm = this.BindingContext as ItemsViewModel;
+
+            var mi = ((MenuItem)sender);
+            Players p = mi.CommandParameter as Players;
+            var x = await DisplayAlert("Editing", "Editing " + p.TEXTNAME + "'s details", "OK", "Cancel");
+            if (x)
+            {
+                viewModel.GoTo_ECommand(p);
+                PlayerListView.ItemsSource = await App.Database.GetPlayersAsync();
+            }
         }
     }
 }
