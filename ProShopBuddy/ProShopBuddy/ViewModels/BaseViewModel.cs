@@ -2,16 +2,14 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
-
 using Xamarin.Forms;
-
 using ProShopBuddy.Models;
 using ProShopBuddy.Services;
-using MvvmCross.Navigation;
+using MvvmCross.Core.ViewModels;
 
 namespace ProShopBuddy.ViewModels
 {
-    public class BaseViewModel : INotifyPropertyChanged
+    public class BaseViewModel : MvxViewModel , INotifyPropertyChanged
     {
         //private readonly IMvxNavigationService _navigationService;
 

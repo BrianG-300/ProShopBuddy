@@ -1,6 +1,4 @@
 ﻿using System;
-using MvvmCross.Navigation;
-using MvvmCross.ViewModels;
 using ProShopBuddy.Models;
 
 namespace ProShopBuddy.ViewModels
@@ -9,13 +7,6 @@ namespace ProShopBuddy.ViewModels
     {
         public AddItemDetailViewModel()
         {
-        }
-
-        private readonly IMvxNavigationService _navigationService;
-
-        public AddItemDetailViewModel(IMvxNavigationService navigationService)
-        {
-            _navigationService = navigationService;
         }
 
         public class DetailParameters
@@ -69,36 +60,21 @@ namespace ProShopBuddy.ViewModels
         public void GoTo_RefCommand()
         {
             //base.ShowViewModel<ReferencesViewModel>();
-            _navigationService.Navigate<ReferenceViewModel>();
+            //_navigationService.Navigate<ReferenceViewModel>();
         }
 
         private Players _selectedPlayer;
         public Players SelectedPlayer
         {
-            get
-            {
-                return _selectedPlayer;
-            }
-            set
-            {
-                _selectedPlayer = value;
-                RaisePropertyChanged(() => SelectedPlayer);
-            }
+            get { return _selectedPlayer; }
+            set { _selectedPlayer = value; RaisePropertyChanged(() => SelectedPlayer); }
         }
 
         private bool _entryEnabled;
         public bool EntryEnabled
         {
-            get
-            {
-                return _entryEnabled;
-            }
-            set
-            {
-                _entryEnabled = value;
-                RaisePropertyChanged(() => EntryEnabled);
-            }
-
+            get { return _entryEnabled; }
+            set { _entryEnabled = value; RaisePropertyChanged(() => EntryEnabled); }
         }
 
         private string _name = "Load Details";
@@ -112,11 +88,6 @@ namespace ProShopBuddy.ViewModels
         {
             await App.Database.SavePlayerAsync(SelectedPlayer);
 
-        }
-
-        public override void Prepare(Players parameter)
-        {
-            throw new NotImplementedException();
         }
     }
 }

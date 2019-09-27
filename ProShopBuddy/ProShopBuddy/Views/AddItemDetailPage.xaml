@@ -12,6 +12,11 @@
         <vm:AddItemDetailViewModel />
     </ContentPage.BindingContext>
 
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Save"
+                     Clicked="OnSaveClicked" />
+    </ContentPage.ToolbarItems>
+
     <ContentPage.Content>
         <ScrollView Orientation="Vertical">
             <StackLayout Orientation="Vertical">

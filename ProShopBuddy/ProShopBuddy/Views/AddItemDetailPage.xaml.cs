@@ -15,46 +15,30 @@ namespace ProShopBuddy.Views
     {
         AddItemDetailViewModel viewModel;
 
-        public AddItemDetailPage(AddItemDetailViewModel viewModel)
-        {
-            InitializeComponent();
-
-            viewModel = this.BindingContext as AddItemDetailViewModel;
-
-        }
-
         public AddItemDetailPage()
         {
             InitializeComponent();
-
-            var item = new Item
-            {
-                Text = "Item 1",
-                Description = "This is an item description."
-            };
-
-           // viewModel = new ItemDetailViewModel(item);
-            BindingContext = viewModel;
-        
-
-        var image = this.FindByName<Image>("DrillImage");
-        image.Source = ImageSource.FromResource("BG300ProShop.Core.Drill_Sheet2.png");
+            viewModel = new AddItemDetailViewModel();
+            //var image = this.FindByName<Image>("DrillImage");
+            //image.Source = ImageSource.FromResource("BG300ProShop.Core.Drill_Sheet2.png");
         }
 
-    async void OnSaveClicked(object sender, EventArgs e)
-    {
-
-        bool x = await DisplayAlert("Save?", "Save details for: " + viewModel.SelectedPlayer.TEXTNAME, "OK", "Cancel");
-
-        if (x)
+        async void OnSaveClicked(object sender, EventArgs e)
         {
+            bool x = await DisplayAlert("Save?", "Save details for: " + viewModel.SelectedPlayer.TEXTNAME, "OK", "Cancel");
+
+            if (x)
+            {
                 viewModel.SaveButtonAction();
+
+                await App.Database.SavePlayerAsync(viewModel.SelectedPlayer);
+
+            }
+        }
+
+        void OnRefClicked(object sender, EventArgs e)
+        {
+            viewModel.GoTo_RefCommand();
         }
     }
-
-    void OnRefClicked(object sender, EventArgs e)
-    {
-            viewModel.GoTo_RefCommand();
-    }
-}
 }

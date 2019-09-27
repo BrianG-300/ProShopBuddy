@@ -23,7 +23,9 @@ namespace ProShopBuddy.Views
 
         void AddPlayer_Clicked(object sender, System.EventArgs e)
         {
-            viewModel.GoTo_AddCommand();
+            //viewModel.GoTo_AddCommand();
+            Navigation.PushModalAsync(new NavigationPage(new AddItemDetailPage()));
+
         }
 
         protected override async void OnAppearing()
@@ -68,7 +70,7 @@ namespace ProShopBuddy.Views
             var x = await DisplayAlert("Loading", "Loading " + p.TEXTNAME + "'s details", "OK", "Cancel");
             if (x)
             {
-                viewModel.GoTo_LoadCommand(p);
+                //viewModel.GoTo_LoadCommand(p);
                 PlayerListView.ItemsSource = await App.Database.GetPlayersAsync();
             }
         }
@@ -82,7 +84,7 @@ namespace ProShopBuddy.Views
             var x = await DisplayAlert("Editing", "Editing " + p.TEXTNAME + "'s details", "OK", "Cancel");
             if (x)
             {
-                viewModel.GoTo_ECommand(p);
+                //viewModel.GoTo_ECommand(p);
                 PlayerListView.ItemsSource = await App.Database.GetPlayersAsync();
             }
         }

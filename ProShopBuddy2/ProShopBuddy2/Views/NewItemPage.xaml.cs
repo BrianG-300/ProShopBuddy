@@ -4,26 +4,27 @@ using System.ComponentModel;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-using ProShopBuddy.Models;
+using ProShopBuddy2.Models;
+using ProShopBuddy;
 
-namespace ProShopBuddy.Views
+namespace ProShopBuddy2.Views
 {
     // Learn more about making custom code visible in the Xamarin.Forms previewer
     // by visiting https://aka.ms/xamarinforms-previewer
     [DesignTimeVisible(false)]
     public partial class NewItemPage : ContentPage
     {
-        public Item Item { get; set; }
+        public Players Item { get; set; }
 
         public NewItemPage()
         {
             InitializeComponent();
 
-            Item = new Item
-            {
-                Text = "Item name",
-                Description = "This is an item description."
-            };
+            //Item = new Players
+            //{
+            //    Text = "Item name",
+            //    Description = "This is an item description."
+            //};
 
             BindingContext = this;
         }

@@ -34,20 +34,20 @@ namespace ProShopBuddy.ViewModels
             App.Database.DeletePlayerAsync(deletePlayer);
         }
 
-        public void GoTo_AddCommand()
-        {
-            ShowViewModel<ItemsViewModel>(new { mode = 2 });
-        }
+        //public void GoTo_AddCommand()
+        //{
+        //    ShowViewModel<ItemsViewModel>(new { mode = 2 });
+        //}
 
-        public void GoTo_LoadCommand(Players p)
-        {
-            ShowViewModel<ItemsViewModel>(new { mode = 0, id = p._ID });
-        }
+        //public void GoTo_LoadCommand(Players p)
+        //{
+        //    ShowViewModel<ItemsViewModel>(new { mode = 0, id = p._ID });
+        //}
 
-        public void GoTo_ECommand(Players p)
-        {
-            ShowViewModel<ItemsViewModel>(new { mode = 1, id = p._ID });
-        }
+        //public void GoTo_ECommand(Players p)
+        //{
+        //    ShowViewModel<ItemsViewModel>(new { mode = 1, id = p._ID });
+        //}
 
     }
 }
