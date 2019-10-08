@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="ArsenalBuddy.Views.ItemDetailPage"
+             Title="{Binding Title}">
+
+    <!--<StackLayout Spacing="20"
+                 Padding="15">
+        <Label Text="Text:"
+               FontSize="Medium" />
+        <Label Text="{Binding Item.Text}"
+               d:Text="Item name"
+               FontSize="Small" />
+        <Label Text="Description:"
+               FontSize="Medium" />
+        <Label Text="{Binding Item.Description}"
+               d:Text="Item description"
+               FontSize="Small" />
+    </StackLayout>-->
+
+    <Grid RowSpacing="2" ColumnSpacing="2" BackgroundColor="White"
+          HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="10" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="10" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="10" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="10" />
+        </Grid.ColumnDefinitions>
+
+        <ContentView Grid.Row="1" Grid.RowSpan="2" Grid.Column="1"
+                     Grid.ColumnSpan="2" BackgroundColor="#bdbebf">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="5" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="5" />
+                </Grid.ColumnDefinitions>
+
+                <StackLayout Grid.Column="1" Orientation="Vertical">
+                    <Label x:Name="BrandLabel" Text="Brand: " />
+                    <Entry x:Name="BrandEntry" Text="{Binding item.BRANDNAME}" />
+                </StackLayout>
+
+            </Grid>
+        </ContentView>
+
+    </Grid>
+</ContentPage>
